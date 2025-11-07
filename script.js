@@ -2,7 +2,7 @@ const characters = [
     {
         image: "images/Gerald.webp",
         name: 'Gerald the Inevitable', race: 'Grung', level: 2, class: ' Fighter', alignment: 'Neutral Good', maxHealth: 19,
-        ac: '11', health: '19', initiative: 3,speed: 25/25, 
+        ac: '11', health: 19, initiative: 3,speed: 25/25, 
         strength: 8, dexterity: 17, constitution: 15, intelligence: 11, wisdom: 13, charisma: 15,
         acrobatics: 3, animal: 1, arcana: 0, athletics: -1, deception: 2, history: 0, insight: 1, intimidation: 2, investigation: 0,
         medicine: 1, nature: 0, perception: 1, performance: 2, persuasion: 2, religion: 0, sleight: 3, stealth: 3, survival: 1
@@ -26,7 +26,7 @@ const characters = [
     },
     {
         image: "images/",
-        name: '-', race: 'Rock Drake', level: 1, class: ' -', alignment: 'Lawful Good', maxHealth: '-',
+        name: 'Sunlit Shadow', race: 'Rock Drake', level: 1, class: ' -', alignment: 'Lawful Good', maxHealth: '-',
         ac: '-', health: '64', initiative: '-', speed: '50/80', 
         strength: 22, dexterity: 17, constitution: 14, intelligence: 8, wisdom: 10, charisma: 3,
         acrobatics: 3, animal: 0, arcana: 2, athletics: -1, deception: 0, history: 2, insight: 0, intimidation: 0, investigation: 2,
@@ -38,6 +38,7 @@ let characterList = document.getElementById('character-list');
 const gerald = characters.find(obj => obj.name === "Gerald the Inevitable");
 const yorrim = characters.find(obj => obj.name === "Yorrim Grimm");
 const input = document.querySelector('#box');
+const num = input.value;
 const popUp = document.querySelector('.input');
 const finalize = document.querySelector('#finalize');
 
@@ -59,9 +60,8 @@ const finalize = document.querySelector('#finalize');
                 <p id="wisdom"><strong>Wis: </strong><span>${character.wisdom}</span><p>
                 <p id="charisma"><strong>Cha: </strong><span>${character.charisma}</span><p>
             </div>
-            <button id="damaging" class="buttons">Damaged</button>
-            <button id="leveling" class="buttons">Heal</button>
-            <button id="resting" class="buttons">Heal (Full)</button>
+            <button id="healing" class="buttons">Health</button>
+            <button id="fhealing" class="buttons">Heal (Full)</button>
         </div>
         <div class="secondary">
             <div id="top">
@@ -106,25 +106,15 @@ const finalize = document.querySelector('#finalize');
     });
 
 function geraldHeal() {
-    gerald.health += input;
     popUp.classList.remove('input');
-}
-function geraldDamaged() {
-    gerald.health -= 3;
-    document.querySelector('#health').textContent = gerald.health;
-    if (gerald.health <= 0){
-    alert('Gerald is dead!');
-    };
 }
 function geraldFHeal() {
     gerald.health = gerald.maxHealth;
     document.querySelector('#health').textContent = gerald.health;
 }
-const button = document.getElementById('leveling');
-button.addEventListener('click', geraldHeal);
-const button2 = document.getElementById('damaging');
-button2.addEventListener('click', geraldDamaged);
-const button3 = document.getElementById('resting');
+const button2 = document.getElementById('healing');
+button2.addEventListener('click', geraldHeal);
+const button3 = document.getElementById('fhealing');
 button3.addEventListener('click', geraldFHeal);
 
 function yorrimHeal() {
@@ -149,6 +139,18 @@ function yorrimFHeal() {
 }
 
 finalize.addEventListener('click', rem);
+input.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        rem();
+    }
+});
 function rem () {
+    const num = Number(input.value);
+    if (Number.isNaN(num)) {
+    alert('Please enter a valid number!');
+    return;
+    }
     popUp.classList.add('input');
+    gerald.health += num;
+    document.querySelector('#health').textContent = gerald.health;
 }

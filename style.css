@@ -1,8 +1,6 @@
 body {
     font-family: Palatino Linotype, sans-serif;
     background: #f0f4f8;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     justify-content: center;
     gap: 50px;
 }
@@ -12,7 +10,7 @@ body {
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.9);
     width: 400px; 
-    margin: 100px 20px;
+    margin: 100px 20px 100px 0px;
     z-index: 4;
 }
 #character-list{
@@ -20,13 +18,15 @@ body {
 }
 .card, .secondary{
     justify-self: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 .secondary{
     background: #313131;
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.9);
     width: 400px;
-    margin: 100px 20px;
+    margin: 100px 20px 100px 0px;
     z-index: 1;
     grid-column-start: 2;
 }
@@ -47,7 +47,7 @@ body {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     height: 10vh;
-    margin: 10px 15px 20px 35px;
+    margin: 0px 15px 20px 35px;
     text-align: left;
 }
 #class{
@@ -207,11 +207,14 @@ span{
     width: 1665px;
     height: 895px;
     border-radius: 20px;
+    position: fixed;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 .input{
-    position: fixed;
+    display: none;
 }
 #submission{
+    display: fixed;
     z-index: 100;
 }
 @media screen and (min-width: 700px) {
