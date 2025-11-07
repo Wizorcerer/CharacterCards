@@ -1,0 +1,168 @@
+body {
+    font-family: Palatino Linotype, sans-serif;
+    background: #f0f4f8;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.card {
+    background: #313131;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.9);
+    width: 400px; 
+    margin: 100px 20px;
+    z-index: 4;
+}
+section{
+    margin: 0 400px;
+}
+.secondary{
+    background: #313131;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.9);
+    width: 400px;
+    margin: 100px 20px;
+    z-index: 1;
+    grid-column-start: 2;
+}
+.image{
+    width: 400px;
+    border-radius: 15px 15px 0 0;
+}
+.name {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: -4px 0 20px 0;
+    color: white;
+    padding: 15px 0 15px 35px;
+    background-color: #5d747b;
+}
+.info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 10vh;
+    margin: 10px 15px 20px 35px;
+    text-align: left;
+}
+#class{
+    grid-column-start: 2;
+    grid-row-start: 1;
+    margin-bottom: 0px;
+}
+#alignment{
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+#maxHealth{
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+p{
+    margin: 5px 0;
+    color: #f0f4f8;
+}
+h2{
+    font-size: 20px;
+    margin: 10px 25px;
+    color: #f0f4f8;
+}
+.stats{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: -10px 15px 7px 35px;
+    text-align: left;
+}
+#dexterity{
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+#constitution{
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+#intelligence{
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+#wisdom{
+    grid-column-start: 1;
+    grid-row-start: 3;
+}
+#charisma{
+    grid-column-start: 2;
+    grid-row-start: 3;
+}
+.buttons {
+    text-align: center;
+}
+button {
+    padding: 8px 12px;
+    margin: 0px 20px 20px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #5d747b;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+button:hover {
+    background-color: #58605a;
+}
+#top{
+    background-color: #ffffff;
+    height: 135px;
+    width: 100%;
+    border-radius: 15px;
+}
+.smstat{
+    text-align: center;
+    width: 20px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    margin: 35px;
+    z-index: 3;
+}
+span{
+    margin: 0 auto;
+}
+.secondary img{
+    width: 100px;
+    z-index: 2
+}
+#shield{
+    position: relative; top: 15px; left: 20px;
+}
+#wing{
+    position: relative; top: 15px; left: 20px;
+    width: 150px;
+}
+#heart{
+    position: relative; top: 10px; left: 25px;
+}
+#armorClass{
+    position: relative; top: -95px; left: 23px;
+    color: #313131
+}
+#initiative{
+    position: relative; top: -170px; left: 130px;
+    color: #313131;
+}
+#hp{
+    position: relative; top: -250px; left: 273px;
+    color: #313131;
+}
+#skills{
+    position: relative; top: -20px;
+    margin: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(9, 1fr);
+}
+@media screen and (min-width: 700px) {
+    section{
+        display: grid;
+    }
+}
