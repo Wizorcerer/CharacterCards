@@ -9,7 +9,7 @@ const characters = [
     },
     {
         image: "images/Illvenator-Sh'var.png",
-        name: 'Yorrim Grimm', race: 'Human', level: 1, class: ' Warlock', alignment: 'Neutral', maxHealth: 10,
+        name: 'Yorrim Grimm', race: '-', level: 1, class: ' Warlock', alignment: '-', maxHealth: 10,
         ac: '14', health: '10', initiative: 3,speed: 30, 
         strength: 8, dexterity: 16, constitution: 14, intelligence: 15, wisdom: 10, charisma: 11,
         acrobatics: 3, animal: 0, arcana: 2, athletics: -1, deception: 0, history: 2, insight: 0, intimidation: 0, investigation: 2,
@@ -37,6 +37,9 @@ const characters = [
 let characterList = document.getElementById('character-list');
 const gerald = characters.find(obj => obj.name === "Gerald the Inevitable");
 const yorrim = characters.find(obj => obj.name === "Yorrim Grimm");
+const input = document.querySelector('#box');
+const popUp = document.querySelector('.input');
+const finalize = document.querySelector('#finalize');
 
     characters.forEach(character => {
         let html = `<div class="card">
@@ -57,8 +60,8 @@ const yorrim = characters.find(obj => obj.name === "Yorrim Grimm");
                 <p id="charisma"><strong>Cha: </strong><span>${character.charisma}</span><p>
             </div>
             <button id="damaging" class="buttons">Damaged</button>
-            <button id="leveling" class="buttons">Level Up</button>
-            <button id="resting" class="buttons">Long Rest</button>
+            <button id="leveling" class="buttons">Heal</button>
+            <button id="resting" class="buttons">Heal (Full)</button>
         </div>
         <div class="secondary">
             <div id="top">
@@ -72,7 +75,9 @@ const yorrim = characters.find(obj => obj.name === "Yorrim Grimm");
             <div id="other">
                 <h2>Equipment</h2>
                 <p></p>
-                <h2>Feats, Proficiencies, and Languages</h2>
+                <h2>Proficiencies, and Languages</h2>
+                <p></p>
+                <h2>Feats</h2>
                 <p></p>
             </div>
             <div id="skills">
@@ -100,34 +105,29 @@ const yorrim = characters.find(obj => obj.name === "Yorrim Grimm");
         characterList.innerHTML += html;
     });
 
-function geraldLevelUp() {
-    gerald.level += 1;
-    document.querySelector('#level').textContent = gerald.level;
-    gerald.maxHealth += 4;
-    gerald.health = gerald.maxHealth;
-    document.querySelector('#health').textContent = gerald.health;
-    document.querySelector('#max').textContent = gerald.maxHealth
+function geraldHeal() {
+    gerald.health += input;
+    popUp.classList.remove('input');
 }
 function geraldDamaged() {
     gerald.health -= 3;
-    console.log(gerald.health);
     document.querySelector('#health').textContent = gerald.health;
     if (gerald.health <= 0){
     alert('Gerald is dead!');
     };
 }
-function geraldLongRest() {
+function geraldFHeal() {
     gerald.health = gerald.maxHealth;
     document.querySelector('#health').textContent = gerald.health;
 }
 const button = document.getElementById('leveling');
-button.addEventListener('click', geraldLevelUp);
+button.addEventListener('click', geraldHeal);
 const button2 = document.getElementById('damaging');
 button2.addEventListener('click', geraldDamaged);
 const button3 = document.getElementById('resting');
-button3.addEventListener('click', geraldLongRest);
+button3.addEventListener('click', geraldFHeal);
 
-function yorrimLevelUp() {
+function yorrimHeal() {
     yorrim.level += 1;
     document.querySelector('#level').textContent = yorrim.level;
     yorrim.maxHealth += 4;
@@ -143,7 +143,12 @@ function yorrimDamaged() {
     alert('Yorrim is dead!');
     };
 }
-function yorrimLongRest() {
+function yorrimFHeal() {
     yorrim.health = yorrim.maxHealth;
     document.querySelector('#health').textContent = yorrim.health;
+}
+
+finalize.addEventListener('click', rem);
+function rem () {
+    popUp.classList.add('input');
 }

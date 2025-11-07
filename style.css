@@ -2,7 +2,9 @@ body {
     font-family: Palatino Linotype, sans-serif;
     background: #f0f4f8;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    justify-content: center;
+    gap: 50px;
 }
 
 .card {
@@ -13,8 +15,11 @@ body {
     margin: 100px 20px;
     z-index: 4;
 }
-section{
-    margin: 0 400px;
+#character-list{
+    justify-content: center;
+}
+.card, .secondary{
+    justify-self: center;
 }
 .secondary{
     background: #313131;
@@ -160,6 +165,54 @@ span{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(9, 1fr);
+}
+#box{
+    z-index: 100;
+    text-align: center;
+    height: 20px;
+    width: 200px;
+    position: fixed; top: 420px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #5d747b;
+    background-size: 100%;
+    color: #ffffff;
+    justify-self: center;
+}
+::placeholder{
+    color: rgba(255, 255, 255, .5);
+}
+#finalize{
+    z-index: 100;
+    position: fixed; top: 470px;
+    justify-self: center;
+    left: 50%;
+    transform: translateX(-75%);
+    z-index: 100;
+    background-color: #5d747b;
+    color: white;
+    font-weight: bold;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+#finalize:hover {
+  background-color: #58605a;
+}
+#background{
+    z-index: 100;
+    background: rgba(49, 49, 49, .90);
+    width: 1665px;
+    height: 895px;
+    border-radius: 20px;
+}
+.input{
+    position: fixed;
+}
+#submission{
+    z-index: 100;
 }
 @media screen and (min-width: 700px) {
     section{
