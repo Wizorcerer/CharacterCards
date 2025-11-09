@@ -26,7 +26,7 @@ const characters = [
     {
         image: "images/", hpbtnid: 'sun', fullid: 'fsun', healthid: 'sunhp',
         name: 'Sunlit Shadow', race: 'Rock Drake', level: 1, class: ' -', alignment: 'Lawful Good', maxHealth: 64,
-        ac: '18/26', health: 64, initiative: '-', speed: '50/80', 
+        ac: '18', health: 64, initiative: '-', speed: '50/80', 
         strength: 22, dexterity: 17, constitution: 14, intelligence: 8, wisdom: 10, charisma: 3,
         acrobatics: 3, animal: 0, arcana: 2, athletics: -1, deception: 0, history: 2, insight: 0, intimidation: 0, investigation: 2,
         medicine: 0, nature: 2, perception: 0, performance: 0, persuasion: 0, religion: 2, sleight: 3, stealth: "3'", survival: 0
