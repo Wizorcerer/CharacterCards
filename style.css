@@ -1,8 +1,4 @@
 body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,7 +24,6 @@ body {
     align-items: center;     /* center each pair horizontally */
     gap: 60px;               /* space between rows */
     padding: 60px 0;
-    width: 100%;
 }
 .card, .secondary{
   display: grid;
@@ -249,7 +244,7 @@ span{
         display: grid;
     }
     #background{
-        width: 1665px;
+        width: 1680px;
     }
     .pair{
         display: flex;
