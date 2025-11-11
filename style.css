@@ -4,7 +4,6 @@ body {
     justify-content: center;
     gap: 50px;
 }
-
 .card {
     background: #313131;
     border-radius: 15px;
@@ -37,7 +36,7 @@ body {
 .name {
     font-size: 1.5em;
     font-weight: bold;
-    margin: -4px 0 20px 0;
+    margin: -4px 0 10px 0;
     color: white;
     padding: 15px 0 15px 35px;
     background-color: #5d747b;
@@ -98,6 +97,11 @@ h2{
     grid-column-start: 2;
     grid-row-start: 3;
 }
+.btncontainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
 .buttons {
     text-align: center;
     padding: 8px 12px;
@@ -110,7 +114,6 @@ h2{
     cursor: pointer;
     transition: background-color 0.5s ease;
 }
-
 button:hover {
     background-color: #58605a;
 }

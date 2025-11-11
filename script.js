@@ -28,7 +28,7 @@ const characters = [
     },
     {
         image: "images/SunlitShadow.jpg", hpbtnid: 'sun', fullid: 'fsun', healthid: 'sunhp',
-        name: 'Sunlit Shadow', race: 'Rock Drake', level: 1, class: ' -', alignment: 'Lawful Good', maxHealth: 64,
+        name: 'Sunlit Shadow', race: 'Rock Drake', level: 1, class: ' Companion', alignment: 'Lawful Good', maxHealth: 64,
         ac: '18', health: 64, initiative: '-', speed: '50/80', 
         sp1: 1, sp2: 1, sp3: 1, sp4: 1, sp5: 1, sp6: 1, sp7: 1, sp8: 1, sp9: 1,
         strength: 22, dexterity: 17, constitution: 14, intelligence: 8, wisdom: 10, charisma: 3,
@@ -37,7 +37,7 @@ const characters = [
     }
     /*
     {
-        image: , hpbtnid: , fullid: , healthid: ,
+        image: "images/", hpbtnid: '', fullid: '', healthid: '',
         name: , race: , level: , class: , alignment: , maxHealth ,
         ac: , health: , initiative: , speed: , 
         sp1: , sp2: , sp3: , sp4: , sp5: , sp6: , sp7: , sp8: , sp9: , 
@@ -74,19 +74,21 @@ characters.forEach(character => {
             <p id="wisdom"><strong>Wis: </strong><span>${character.wisdom}</span></p>
             <p id="charisma"><strong>Cha: </strong><span>${character.charisma}</span></p>
         </div>
-        <button id=${character.hpbtnid} class="buttons">Health</button>
-        <button id=${character.fullid} class="buttons">Heal (Full)</button>
-        <select class="buttons" name="Spell slots">
-            <option>Level 1 spells (${character.sp1})</option>
-            <option>Level 2 spells (${character.sp2})</option>
-            <option>Level 3 spells (${character.sp3})</option>
-            <option>Level 4 spells (${character.sp4})</option>
-            <option>Level 5 spells (${character.sp5})</option>
-            <option>Level 6 spells (${character.sp6})</option>
-            <option>Level 7 spells (${character.sp7})</option>
-            <option>Level 8 spells (${character.sp8})</option>
-            <option>Level 9 spells (${character.sp9})</option>
-        </select>
+        <div class="btncontainer">
+            <button id=${character.hpbtnid} class="buttons">Health</button>
+            <button id=${character.fullid} class="buttons">Heal (Full)</button>
+            <select class="buttons" name="Spell slots">
+                <option>Level 1 spells (${character.sp1})</option>
+                <option>Level 2 spells (${character.sp2})</option>
+                <option>Level 3 spells (${character.sp3})</option>
+                <option>Level 4 spells (${character.sp4})</option>
+                <option>Level 5 spells (${character.sp5})</option>
+                <option>Level 6 spells (${character.sp6})</option>
+                <option>Level 7 spells (${character.sp7})</option>
+                <option>Level 8 spells (${character.sp8})</option>
+                <option>Level 9 spells (${character.sp9})</option>
+            </select>
+        </div>
     </div>
     <div class="secondary">
         <div id="top">
