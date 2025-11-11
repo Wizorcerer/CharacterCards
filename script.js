@@ -12,7 +12,7 @@ const characters = [
         image: "images/Eladrin.png", hpbtnid: 'aran', fullid: 'faran', healthid: 'aranhp',
         name: 'Arannis', race: 'Eladrin(Winter)', level: 1, class: ' Ranger', alignment: 'Chaotic Good', maxHealth: '-',
         ac: '-', health: '-', initiative: '-', speed: 30, 
-        sp1: 1, sp2: 1, sp3: 1, sp4: 1, sp5: 1, sp6: 1, sp7: 1, sp8: 1, sp9: 1,
+        sp1: 1, sp2: 0, sp3: 0, sp4: 0, sp5: 0, sp6: 0, sp7: 0, sp8: 0, sp9: 0,
         strength: 16, dexterity: 16, constitution: 10, intelligence: 6, wisdom: 18, charisma: 6,
         acrobatics: 3, animal: 4, arcana: -2, athletics: 3, deception: -2, history: -2, insight: 4, intimidation: -2, investigation: -2,
         medicine: 4, nature: -2, perception: "4'", performance: -2, persuasion: -2, religion: -2, sleight: 3, stealth: 3, survival: 4, 
@@ -21,7 +21,7 @@ const characters = [
         image: "images/SunlitShadow.jpg", hpbtnid: 'sun', fullid: 'fsun', healthid: 'sunhp',
         name: 'Sunlit Shadow', race: 'Rock Drake', level: 1, class: ' Companion', alignment: 'Lawful Good', maxHealth: 64,
         ac: '-', health: 64, initiative: '-', speed: '50/80', 
-        sp1: 1, sp2: 1, sp3: 1, sp4: 1, sp5: 1, sp6: 1, sp7: 1, sp8: 1, sp9: 1,
+        sp1: 0, sp2: 0, sp3: 0, sp4: 0, sp5: 0, sp6: 0, sp7: 0, sp8: 0, sp9: 0,
         strength: 22, dexterity: 17, constitution: 14, intelligence: 8, wisdom: 10, charisma: 3,
         acrobatics: 3, animal: 0, arcana: -1, athletics: 6, deception: -4, history: -1, insight: 0, intimidation: 0, investigation: -1,
         medicine: 0, nature: 0, perception: 0, performance: -4, persuasion: -4, religion: -1, sleight: 3, stealth: "3'", survival: 0
@@ -30,7 +30,7 @@ const characters = [
         image: "images/Gerald.webp", hpbtnid: 'ger', fullid: 'fger', healthid: 'gerhp',
         name: 'Gerald the Inevitable', race: 'Grung', level: 2, class: ' Fighter', alignment: 'Neutral Good', maxHealth: 19,
         ac: '11', health: 19, initiative: 3,speed: '25/25', 
-        sp1: 1, sp2: 1, sp3: 1, sp4: 1, sp5: 1, sp6: 1, sp7: 1, sp8: 1, sp9: 1,
+        sp1: 1, sp2: 1, sp3: 0, sp4: 0, sp5: 0, sp6: 0, sp7: 0, sp8: 0, sp9: 0,
         strength: 8, dexterity: 17, constitution: 15, intelligence: 11, wisdom: 13, charisma: 15,
         acrobatics: 3, animal: 1, arcana: 0, athletics: -1, deception: 2, history: 0, insight: 1, intimidation: 2, investigation: 0,
         medicine: 1, nature: 0, perception: 1, performance: 2, persuasion: 2, religion: 0, sleight: 3, stealth: 3, survival: 1
