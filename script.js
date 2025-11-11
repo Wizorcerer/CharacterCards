@@ -20,7 +20,7 @@ const characters = [
     {
         image: "images/SunlitShadow.jpg", hpbtnid: 'sun', fullid: 'fsun', healthid: 'sunhp',
         name: 'Sunlit Shadow', race: 'Rock Drake', level: 1, class: ' Companion', alignment: 'Lawful Good', maxHealth: 64,
-        ac: '18', health: 64, initiative: '-', speed: '50/80', 
+        ac: '-', health: 64, initiative: '-', speed: '50/80', 
         sp1: 1, sp2: 1, sp3: 1, sp4: 1, sp5: 1, sp6: 1, sp7: 1, sp8: 1, sp9: 1,
         strength: 22, dexterity: 17, constitution: 14, intelligence: 8, wisdom: 10, charisma: 3,
         acrobatics: 3, animal: 0, arcana: -1, athletics: 6, deception: -4, history: -1, insight: 0, intimidation: 0, investigation: -1,
@@ -79,16 +79,17 @@ characters.forEach(character => {
             <button id=${character.hpbtnid} class="buttons">Health</button>
             <button id=${character.fullid} class="buttons">Heal (Full)</button>
             <select class="buttons" name="Spell slots">
-                <option>Level 1 spells (${character.sp1})</option>
-                <option>Level 2 spells (${character.sp2})</option>
-                <option>Level 3 spells (${character.sp3})</option>
-                <option>Level 4 spells (${character.sp4})</option>
-                <option>Level 5 spells (${character.sp5})</option>
-                <option>Level 6 spells (${character.sp6})</option>
-                <option>Level 7 spells (${character.sp7})</option>
-                <option>Level 8 spells (${character.sp8})</option>
-                <option>Level 9 spells (${character.sp9})</option>
+                <option>Level 1 Spells (${character.sp1})</option>
+                <option>Level 2 Spells (${character.sp2})</option>
+                <option>Level 3 Spells (${character.sp3})</option>
+                <option>Level 4 Spells (${character.sp4})</option>
+                <option>Level 5 Spells (${character.sp5})</option>
+                <option>Level 6 Spells (${character.sp6})</option>
+                <option>Level 7 Spells (${character.sp7})</option>
+                <option>Level 8 Spells (${character.sp8})</option>
+                <option>Level 9 Spells (${character.sp9})</option>
             </select>
+            <button class ="buttons">Use Spell</button>
         </div>
     </div>
     <div class="secondary">
