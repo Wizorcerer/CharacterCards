@@ -16,12 +16,25 @@ body {
     z-index: 4;
 }
 #character-list{
-    justify-content: center;
+    display: flex;
+    flex-direction: column;  /* stack rows vertically */
+    align-items: center;     /* center each pair horizontally */
+    gap: 60px;               /* space between rows */
+    padding: 60px 0;
 }
 .card, .secondary{
-    justify-self: center;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  display: grid;
+  width: 400px;
+  border-radius: 15px;
+  background: #313131;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.9);
+}
+.pair{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;               /* space between card and secondary */
+    flex-wrap: wrap; 
 }
 .secondary{
     background: #313131;
@@ -227,5 +240,15 @@ span{
     }
     #background{
         width: 1665px;
+    }
+    .pair{
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        gap: 40px;
+    }
+    .card, .secondary{
+        flex: 1 1 400px;
+        display: grid;
     }
 }

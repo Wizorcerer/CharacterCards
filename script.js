@@ -56,8 +56,9 @@ const popUp = document.querySelector('.input');
 const finalize = document.querySelector('#finalize');
 
 characters.forEach(character => {
-    let html = 
-    `<div class="card">
+    let html = `
+    <div class="pair">
+    <div class="card">
         <img class="image" src=${character.image}>
         <h2 class="name">${character.name}</h2>
         <div class="info">
@@ -127,6 +128,7 @@ characters.forEach(character => {
             <p><strong>Stealth: </strong><span id="stealth">${character.stealth}</span></p>
             <p><strong>Survival: </strong><span id="survival">${character.survival}</span></p>
         </div>
+    </div>
     </div>
     `;
     characterList.innerHTML += html;
