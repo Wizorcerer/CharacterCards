@@ -7,6 +7,9 @@ body {
     justify-content: center;
     gap: 50px;
 }
+::-webkit-scrollbar{
+    display: none;
+}
 .card {
     background: #313131;
     border-radius: 15px;
