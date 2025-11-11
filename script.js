@@ -3,6 +3,7 @@ const characters = [
         image: "images/Gerald.webp", hpbtnid: 'ger', fullid: 'fger', healthid: 'gerhp',
         name: 'Gerald the Inevitable', race: 'Grung', level: 2, class: ' Fighter', alignment: 'Neutral Good', maxHealth: 19,
         ac: '11', health: 19, initiative: 3,speed: '25/25', 
+        sp1: 1, sp2: 1, sp3: 1, sp4: 1, sp5: 1, sp6: 1, sp7: 1, sp8: 1, sp9: 1,
         strength: 8, dexterity: 17, constitution: 15, intelligence: 11, wisdom: 13, charisma: 15,
         acrobatics: 3, animal: 1, arcana: 0, athletics: -1, deception: 2, history: 0, insight: 1, intimidation: 2, investigation: 0,
         medicine: 1, nature: 0, perception: 1, performance: 2, persuasion: 2, religion: 0, sleight: 3, stealth: 3, survival: 1
@@ -11,6 +12,7 @@ const characters = [
         image: "images/Illvenator-Sh'var.png", hpbtnid: 'ill', fullid: 'fill', healthid: 'illhp',
         name: 'Yorrim Grimm', race: '-', level: 1, class: ' Warlock', alignment: '-', maxHealth: 10,
         ac: '14', health: 10, initiative: 3,speed: 30, 
+        sp1: 1, sp2: 1, sp3: 1, sp4: 1, sp5: 1, sp6: 1, sp7: 1, sp8: 1, sp9: 1,
         strength: 8, dexterity: 16, constitution: 14, intelligence: 15, wisdom: 10, charisma: 11,
         acrobatics: 3, animal: 0, arcana: 2, athletics: -1, deception: 0, history: 2, insight: 0, intimidation: 0, investigation: 2,
         medicine: 0, nature: 2, perception: 0, performance: 0, persuasion: 0, religion: 2, sleight: 3, stealth: 3, survival: 0
@@ -19,26 +21,35 @@ const characters = [
         image: "images/Eladrin.png", hpbtnid: 'aran', fullid: 'faran', healthid: 'aranhp',
         name: 'Arannis', race: 'Eladrin(Winter)', level: 1, class: ' Ranger', alignment: 'Chaotic Good', maxHealth: '-',
         ac: '-', health: '-', initiative: '-', speed: 30, 
+        sp1: 1, sp2: 1, sp3: 1, sp4: 1, sp5: 1, sp6: 1, sp7: 1, sp8: 1, sp9: 1,
         strength: 16, dexterity: 16, constitution: 10, intelligence: 6, wisdom: 18, charisma: 6,
         acrobatics: 3, animal: 4, arcana: -2, athletics: 3, deception: -2, history: -2, insight: 4, intimidation: -2, investigation: -2,
         medicine: 4, nature: -2, perception: "4'", performance: -2, persuasion: -2, religion: -2, sleight: 3, stealth: 3, survival: 4, 
     },
     {
-        image: "images/", hpbtnid: 'sun', fullid: 'fsun', healthid: 'sunhp',
+        image: "images/SunlitShadow.jpg", hpbtnid: 'sun', fullid: 'fsun', healthid: 'sunhp',
         name: 'Sunlit Shadow', race: 'Rock Drake', level: 1, class: ' -', alignment: 'Lawful Good', maxHealth: 64,
         ac: '18', health: 64, initiative: '-', speed: '50/80', 
+        sp1: 1, sp2: 1, sp3: 1, sp4: 1, sp5: 1, sp6: 1, sp7: 1, sp8: 1, sp9: 1,
         strength: 22, dexterity: 17, constitution: 14, intelligence: 8, wisdom: 10, charisma: 3,
-        acrobatics: 3, animal: 0, arcana: 2, athletics: -1, deception: 0, history: 2, insight: 0, intimidation: 0, investigation: 2,
-        medicine: 0, nature: 2, perception: 0, performance: 0, persuasion: 0, religion: 2, sleight: 3, stealth: "3'", survival: 0
+        acrobatics: 3, animal: 0, arcana: -1, athletics: 6, deception: -4, history: -1, insight: 0, intimidation: 0, investigation: -1,
+        medicine: 0, nature: 0, perception: 0, performance: -4, persuasion: -4, religion: -1, sleight: 3, stealth: "3'", survival: 0
     }
+    /*
+    {
+        image: , hpbtnid: , fullid: , healthid: ,
+        name: , race: , level: , class: , alignment: , maxHealth ,
+        ac: , health: , initiative: , speed: , 
+        sp1: , sp2: , sp3: , sp4: , sp5: , sp6: , sp7: , sp8: , sp9: , 
+        strength: , dexterity: , constitution: , intelligence: , wisdom: , charisma: , 
+        acrobatics: , animal: , arcana: , athletics: , deception: , history: , insight: , intimidation: , investigation: ,
+        medicine: , nature: , perception: , performance: , persuasion: , religion: , sleight: , stealth: , survival: 
+    }
+    */
 ]
 
 let characterList = document.getElementById('character-list');
 let target = "a";
-const gerald = characters.find(obj => obj.name === "Gerald the Inevitable");
-const yorrim = characters.find(obj => obj.name === "Yorrim Grimm");
-const arannis = characters.find(obj => obj.name === "Arannis");
-const sunlit = characters.find(obj => obj.name === "Sunlit Shadow");
 const input = document.querySelector('#box');
 const num = input.value;
 const popUp = document.querySelector('.input');
@@ -65,6 +76,17 @@ characters.forEach(character => {
         </div>
         <button id=${character.hpbtnid} class="buttons">Health</button>
         <button id=${character.fullid} class="buttons">Heal (Full)</button>
+        <select class="buttons" name="Spell slots">
+            <option>Level 1 spells (${character.sp1})</option>
+            <option>Level 2 spells (${character.sp2})</option>
+            <option>Level 3 spells (${character.sp3})</option>
+            <option>Level 4 spells (${character.sp4})</option>
+            <option>Level 5 spells (${character.sp5})</option>
+            <option>Level 6 spells (${character.sp6})</option>
+            <option>Level 7 spells (${character.sp7})</option>
+            <option>Level 8 spells (${character.sp8})</option>
+            <option>Level 9 spells (${character.sp9})</option>
+        </select>
     </div>
     <div class="secondary">
         <div id="top">
@@ -108,66 +130,6 @@ characters.forEach(character => {
     characterList.innerHTML += html;
 });
 
-function geraldHeal() {
-    popUp.classList.remove('input');
-    target = gerald;
-}
-function geraldFHeal() {
-    gerald.health = gerald.maxHealth;
-    document.querySelector('#health-gerhp').textContent = gerald.maxHealth;
-    target = gerald;
-}
-
-function illHeal() {
-    popUp.classList.remove('input');
-    target = yorrim;
-}
-function illFHeal() {
-    yorrim.health = yorrim.maxHealth;
-    document.querySelector('#health-illhp').textContent = yorrim.maxHealth;
-    target = yorrim;
-}
-
-function aranHeal() {
-    popUp.classList.remove('input');
-    target = arannis;
-}
-function aranFHeal() {
-    arannis.health = arannis.maxHealth;
-    document.querySelector('#health-aranhp').textContent = arannis.maxHealth;
-    target = arannis;
-}
-
-function sunHeal() {
-    popUp.classList.remove('input');
-    target = sunlit;
-}
-function sunFHeal() {
-    sunlit.health = sunlit.maxHealth;
-    document.querySelector('#health-sunhp').textContent = sunlit.maxHealth;
-    target = sunlit;
-}
-
-const button1 = document.getElementById('ger');
-const button2 = document.getElementById('fger');
-button1.addEventListener('click', geraldHeal);
-button2.addEventListener('click', geraldFHeal);
-
-const button3 = document.getElementById('ill');
-const button4 = document.getElementById('fill');
-button3.addEventListener('click', illHeal);
-button4.addEventListener('click', illFHeal);
-
-const button5 = document.getElementById('aran');
-const button6 = document.getElementById('faran');
-button5.addEventListener('click', aranHeal);
-button6.addEventListener('click', aranFHeal);
-
-const button7 = document.getElementById('sun');
-const button8 = document.getElementById('fsun');
-button7.addEventListener('click', sunHeal);
-button8.addEventListener('click', sunFHeal);
-
 finalize.addEventListener('click', rem);
 input.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
@@ -181,14 +143,16 @@ function rem () {
     document.querySelector(`#health-${target.healthid}`).textContent = target.health;
 }
 
-//characters.forEach(char => {
-//    document.getElementById(char.hpbtnid).addEventListener('click', () => {
-//        popUp.classList.remove('input');
-//        target = char;
-//    });
-//    document.getElementById(char.fullid).addEventListener('click', () => {
-//        char.health = Number(char.maxHealth) || char.maxHealth;
-//        document.querySelector(`#health-${char.healthid}`).textContent = char.health;
-//        target = char;
-//    });
-//});
+characters.forEach(char => {
+    document.getElementById(char.hpbtnid).addEventListener('click', () => {
+        console.log('Clicked:', char.hpbtnid);
+        console.log('popUp element:', popUp);
+        popUp.classList.remove('input');
+        target = char;
+    });
+    document.getElementById(char.fullid).addEventListener('click', () => {
+        char.health = Number(char.maxHealth) || char.maxHealth;
+        document.querySelector(`#health-${char.healthid}`).textContent = char.health;
+        target = char;
+    });
+});
