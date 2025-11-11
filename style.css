@@ -1,4 +1,7 @@
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     font-family: Palatino Linotype, sans-serif;
     background: #f0f4f8;
     justify-content: center;
