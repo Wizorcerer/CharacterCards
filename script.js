@@ -156,7 +156,7 @@ characters.forEach(char => {
         target = char;
     });
     document.getElementById(char.fullid).addEventListener('click', () => {
-        char.health = Number(char.maxHealth) || char.maxHealth;
+        char.health = Number(char.maxHealth);
         document.querySelector(`#health-${char.healthid}`).textContent = char.health;
         target = char;
     });
