@@ -252,11 +252,12 @@ span{
 #background{
     z-index: 100;
     background: rgba(49, 49, 49, .90);
-    width: 100%;
+    width: 98.5%;
     height: 895px;
     border-radius: 20px;
     position: fixed; top: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transform: translatex(5px);
 }
 .input{
     display: none;
@@ -270,7 +271,8 @@ span{
         display: grid;
     }
     #background{
-        width: 1680px;
+        width: 99%;
+        transform: translatex(10px);
     }
     .pair{
         display: flex;
