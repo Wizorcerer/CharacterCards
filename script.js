@@ -198,17 +198,21 @@ tools.forEach(tl => {
         if (mobile == false) {
             if (tog == false) {
                 id.style.transform = 'translateX(0px)';
+                id.style.zIndex = '10'
                 tog = true;
             } else {
                 id.style.transform = 'translateX(260px)';
+                id.style.zIndex = '5'
                 tog = false;
             }
         } else{
             if (tog == false) {
                 id.style.transform = 'translateY(0px)';
+                id.style.zIndex = '10'
                 tog = true;
             } else {
                 id.style.transform = 'translateY(-85px)';
+                id.style.zIndex = '5'
                 tog = false;
             }
         }

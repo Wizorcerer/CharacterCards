@@ -34,7 +34,8 @@ body {
     border: 2.5px solid #5d747b;
     border-top: none;
     cursor: pointer;
-    position: relative;
+    position: absolute;
+    bottom: -30px;
     margin-top: 50px;
 }
 #exp1{
