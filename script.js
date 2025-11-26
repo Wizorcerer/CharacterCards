@@ -1,6 +1,7 @@
 const characters = [
     {
-        image: "images/Illvenator-Sh'var.png", hpbtnid: 'ill', fullid: 'fill', healthid: 'illhp', useid: 'uill',
+        image: "images/Illvenator-Sh'var.png", hpbtnid: 'ill', fullid: 'fill', healthid: 'illhp', useid: 'uill', slid: 'slill',
+        sp1id: 'sp1idill', sp2id: 'sp2idill', sp3id: 'sp3idill', sp4id: 'sp4idill', sp5id: 'sp5idill', sp6id: 'sp6idill', sp7id: 'sp7idill', sp8id: 'sp8idill', sp9id: 'sp9idill',
         name: 'Yorrim Grimm', race: '-', level: 1, class: ' Warlock', alignment: '-', maxHealth: 10,
         ac: '14', health: 10, initiative: 3,speed: 30, 
         sp1: 1, sp2: 1, sp3: 1, sp4: 1, sp5: 1, sp6: 1, sp7: 1, sp8: 1, sp9: 1,
@@ -9,7 +10,8 @@ const characters = [
         medicine: 0, nature: 2, perception: 0, performance: 0, persuasion: 0, religion: 2, sleight: 3, stealth: 3, survival: 0
     },
     {
-        image: "images/Eladrin.png", hpbtnid: 'aran', fullid: 'faran', healthid: 'aranhp', useid: 'uaran',
+        image: "images/Eladrin.png", hpbtnid: 'aran', fullid: 'faran', healthid: 'aranhp', useid: 'uaran', slid: 'slaran',
+        sp1id: 'sp1idaran', sp2id: 'sp2idaran', sp3id: 'sp3idaran', sp4id: 'sp4idaran', sp5id: 'sp5idaran', sp6id: 'sp6idaran', sp7id: 'sp7idaran', sp8id: 'sp8idaran', sp9id: 'sp9idaran',
         name: 'Arannis', race: 'Eladrin(Winter)', level: 1, class: ' Ranger', alignment: 'Chaotic Good', maxHealth: '-',
         ac: '-', health: '-', initiative: '-', speed: 30, 
         sp1: 1, sp2: 0, sp3: 0, sp4: 0, sp5: 0, sp6: 0, sp7: 0, sp8: 0, sp9: 0,
@@ -18,7 +20,8 @@ const characters = [
         medicine: 4, nature: -2, perception: "4'", performance: -2, persuasion: -2, religion: -2, sleight: 3, stealth: 3, survival: 4, 
     },
     {
-        image: "images/SunlitShadow.jpg", hpbtnid: 'sun', fullid: 'fsun', healthid: 'sunhp', useid: 'usun',
+        image: "images/SunlitShadow.jpg", hpbtnid: 'sun', fullid: 'fsun', healthid: 'sunhp', useid: 'usun', slid: 'slsun',
+        sp1id: 'sp1idsun', sp2id: 'sp2idsun', sp3id: 'sp3idsun', sp4id: 'sp4idsun', sp5id: 'sp5idsun', sp6id: 'sp6idsun', sp7id: 'sp7idsun', sp8id: 'sp8idsun', sp9id: 'sp9idsun',
         name: 'Sunlit Shadow', race: 'Rock Drake', level: 1, class: ' Companion', alignment: 'Lawful Good', maxHealth: 64,
         ac: '-', health: 64, initiative: '-', speed: '50/80', 
         sp1: 0, sp2: 0, sp3: 0, sp4: 0, sp5: 0, sp6: 0, sp7: 0, sp8: 0, sp9: 0,
@@ -27,7 +30,8 @@ const characters = [
         medicine: 0, nature: 0, perception: 0, performance: -4, persuasion: -4, religion: -1, sleight: 3, stealth: "3'", survival: 0
     },
     {
-        image: "images/Gerald.webp", hpbtnid: 'ger', fullid: 'fger', healthid: 'gerhp', useid: 'uger',
+        image: "images/Gerald.webp", hpbtnid: 'ger', fullid: 'fger', healthid: 'gerhp', useid: 'uger', slid: 'slger',
+        sp1id: 'sp1idger', sp2id: 'sp2idger', sp3id: 'sp3idger', sp4id: 'sp4idger', sp5id: 'sp5idger', sp6id: 'sp6idger', sp7id: 'sp7idger', sp8id: 'sp8idger', sp9id: 'sp9idger',
         name: 'Gerald the Inevitable', race: 'Grung', level: 2, class: ' Fighter', alignment: 'Neutral Good', maxHealth: 19,
         ac: '11', health: 19, initiative: 3,speed: '25/25', 
         sp1: 1, sp2: 1, sp3: 0, sp4: 0, sp5: 0, sp6: 0, sp7: 0, sp8: 0, sp9: 0,
@@ -37,7 +41,8 @@ const characters = [
     },
     /*
     {
-        image: "images/", hpbtnid: '', fullid: '', healthid: '', useid: '',
+        image: "images/", hpbtnid: '', fullid: '', healthid: '', useid: '', slid: '',
+        sp1id: '', sp2id: '', sp3id: '', sp4id: '', sp5id: '', sp6id: '', sp7id: '', sp8id: '', sp9id: '',
         name: , race: , level: , class: , alignment: , maxHealth ,
         ac: , health: , initiative: , speed: , 
         sp1: , sp2: , sp3: , sp4: , sp5: , sp6: , sp7: , sp8: , sp9: , 
@@ -78,16 +83,16 @@ characters.forEach(character => {
         <div class="btncontainer">
             <button id=${character.hpbtnid} class="buttons">Health</button>
             <button id=${character.fullid} class="buttons">Heal (Full)</button>
-            <select class="buttons" name="Spell slots">
-                <option>Level 1 Spells (${character.sp1})</option>
-                <option>Level 2 Spells (${character.sp2})</option>
-                <option>Level 3 Spells (${character.sp3})</option>
-                <option>Level 4 Spells (${character.sp4})</option>
-                <option>Level 5 Spells (${character.sp5})</option>
-                <option>Level 6 Spells (${character.sp6})</option>
-                <option>Level 7 Spells (${character.sp7})</option>
-                <option>Level 8 Spells (${character.sp8})</option>
-                <option>Level 9 Spells (${character.sp9})</option>
+            <select class="buttons" name="Spell slots" id="${character.slid}">
+                <option value="sp1" id=${character.sp1id}>Level 1 Spells (${character.sp1})</option>
+                <option value="sp2" id=${character.sp2id}>Level 2 Spells (${character.sp2})</option>
+                <option value="sp3" id=${character.sp3id}>Level 3 Spells (${character.sp3})</option>
+                <option value="sp4" id=${character.sp4id}>Level 4 Spells (${character.sp4})</option>
+                <option value="sp5" id=${character.sp5id}>Level 5 Spells (${character.sp5})</option>
+                <option value="sp6" id=${character.sp6id}>Level 6 Spells (${character.sp6})</option>
+                <option value="sp7" id=${character.sp7id}>Level 7 Spells (${character.sp7})</option>
+                <option value="sp8" id=${character.sp8id}>Level 8 Spells (${character.sp8})</option>
+                <option value="sp9" id=${character.sp9id}>Level 9 Spells (${character.sp9})</option>
             </select>
             <button class ="buttons" id=${character.useid}>Use Spell</button>
         </div>
@@ -159,7 +164,13 @@ characters.forEach(char => {
         target = char;
     });
     document.getElementById(char.useid).addEventListener('click', () => {
-        console.log('clicked');
+        const select = document.getElementById(char.slid).value;
+        (char[select]) -= 1;
+        console.log(char[select]);
+        const displayId = char[`${select}id`];
+        const option = document.getElementById(displayId);
+        const levelNumber = select.replace("sp", "");
+        option.textContent = `Level ${levelNumber} Spells (${char[select]})`;
     })
 });
 
