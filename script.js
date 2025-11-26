@@ -1,6 +1,6 @@
 const characters = [
     {
-        image: "images/Illvenator-Sh'var.png", hpbtnid: 'ill', fullid: 'fill', healthid: 'illhp',
+        image: "images/Illvenator-Sh'var.png", hpbtnid: 'ill', fullid: 'fill', healthid: 'illhp', useid: 'uill',
         name: 'Yorrim Grimm', race: '-', level: 1, class: ' Warlock', alignment: '-', maxHealth: 10,
         ac: '14', health: 10, initiative: 3,speed: 30, 
         sp1: 1, sp2: 1, sp3: 1, sp4: 1, sp5: 1, sp6: 1, sp7: 1, sp8: 1, sp9: 1,
@@ -9,7 +9,7 @@ const characters = [
         medicine: 0, nature: 2, perception: 0, performance: 0, persuasion: 0, religion: 2, sleight: 3, stealth: 3, survival: 0
     },
     {
-        image: "images/Eladrin.png", hpbtnid: 'aran', fullid: 'faran', healthid: 'aranhp',
+        image: "images/Eladrin.png", hpbtnid: 'aran', fullid: 'faran', healthid: 'aranhp', useid: 'uaran',
         name: 'Arannis', race: 'Eladrin(Winter)', level: 1, class: ' Ranger', alignment: 'Chaotic Good', maxHealth: '-',
         ac: '-', health: '-', initiative: '-', speed: 30, 
         sp1: 1, sp2: 0, sp3: 0, sp4: 0, sp5: 0, sp6: 0, sp7: 0, sp8: 0, sp9: 0,
@@ -18,7 +18,7 @@ const characters = [
         medicine: 4, nature: -2, perception: "4'", performance: -2, persuasion: -2, religion: -2, sleight: 3, stealth: 3, survival: 4, 
     },
     {
-        image: "images/SunlitShadow.jpg", hpbtnid: 'sun', fullid: 'fsun', healthid: 'sunhp',
+        image: "images/SunlitShadow.jpg", hpbtnid: 'sun', fullid: 'fsun', healthid: 'sunhp', useid: 'usun',
         name: 'Sunlit Shadow', race: 'Rock Drake', level: 1, class: ' Companion', alignment: 'Lawful Good', maxHealth: 64,
         ac: '-', health: 64, initiative: '-', speed: '50/80', 
         sp1: 0, sp2: 0, sp3: 0, sp4: 0, sp5: 0, sp6: 0, sp7: 0, sp8: 0, sp9: 0,
@@ -27,7 +27,7 @@ const characters = [
         medicine: 0, nature: 0, perception: 0, performance: -4, persuasion: -4, religion: -1, sleight: 3, stealth: "3'", survival: 0
     },
     {
-        image: "images/Gerald.webp", hpbtnid: 'ger', fullid: 'fger', healthid: 'gerhp',
+        image: "images/Gerald.webp", hpbtnid: 'ger', fullid: 'fger', healthid: 'gerhp', useid: 'uger',
         name: 'Gerald the Inevitable', race: 'Grung', level: 2, class: ' Fighter', alignment: 'Neutral Good', maxHealth: 19,
         ac: '11', health: 19, initiative: 3,speed: '25/25', 
         sp1: 1, sp2: 1, sp3: 0, sp4: 0, sp5: 0, sp6: 0, sp7: 0, sp8: 0, sp9: 0,
@@ -37,7 +37,7 @@ const characters = [
     },
     /*
     {
-        image: "images/", hpbtnid: '', fullid: '', healthid: '',
+        image: "images/", hpbtnid: '', fullid: '', healthid: '', useid: '',
         name: , race: , level: , class: , alignment: , maxHealth ,
         ac: , health: , initiative: , speed: , 
         sp1: , sp2: , sp3: , sp4: , sp5: , sp6: , sp7: , sp8: , sp9: , 
@@ -89,7 +89,7 @@ characters.forEach(character => {
                 <option>Level 8 Spells (${character.sp8})</option>
                 <option>Level 9 Spells (${character.sp9})</option>
             </select>
-            <button class ="buttons">Use Spell</button>
+            <button class ="buttons" id=${character.useid}>Use Spell</button>
         </div>
     </div>
     <div class="secondary">
@@ -150,8 +150,6 @@ function rem () {
 
 characters.forEach(char => {
     document.getElementById(char.hpbtnid).addEventListener('click', () => {
-        console.log('Clicked:', char.hpbtnid);
-        console.log('popUp element:', popUp);
         popUp.classList.remove('input');
         target = char;
     });
@@ -160,4 +158,50 @@ characters.forEach(char => {
         document.querySelector(`#health-${char.healthid}`).textContent = char.health;
         target = char;
     });
+    document.getElementById(char.useid).addEventListener('click', () => {
+        console.log('clicked');
+    })
 });
+
+//tools
+
+const exp1 = document.getElementById('exp1');
+const t1 = document.getElementById('t1');
+let tog1 = false;
+
+resize();
+
+exp1.addEventListener('click', menuFold)
+window.addEventListener('resize', resize)
+
+function resize () {
+    if (window.innerWidth < 700) {
+        mobile = true;
+        t1.style.transform = 'translateY(-85px)';
+        tog1 = false;
+    } else {
+        mobile = false;
+        t1.style.transform = 'translateX(260px)';
+        tog1 = false;
+    }
+};
+
+function menuFold () {
+    if (mobile == false) {
+        if (tog1 == false) {
+            t1.style.transform = 'translateX(0px)';
+            tog1 = true;
+        } else {
+            t1.style.transform = 'translateX(260px)';
+            tog1 = false;
+        }
+    } else{
+        if (tog1 == false) {
+            t1.style.transform = 'translateY(0px)';
+            tog1 = true;
+        } else {
+            t1.style.transform = 'translateY(-85px)';
+            tog1 = false;
+        }
+    }
+}
