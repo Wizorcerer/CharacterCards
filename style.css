@@ -13,6 +13,8 @@ body {
     display: none;
 }
 .tool{
+    position: fixed;
+    top: 0;
     background-color: #313131;
     border: solid #5d747b 3px;
     color: black;
@@ -21,6 +23,7 @@ body {
     margin: 0;
     transform: translateY(-85px);
     transition: 0.15s ease;
+    width: 99%;
 }
 .expand{
     width: 55px;
@@ -31,18 +34,26 @@ body {
     border: 2.5px solid #5d747b;
     border-top: none;
     cursor: pointer;
+    position: relative;
+    margin-top: 50px;
 }
 #exp1{
-    position: relative;
-    transform: translateY(50px);
     margin-left: 10px;
+    transform: none;
+    top: auto;
+    margin-right: 0;
+}
+#exp2{
+    margin-left: 100px;
+    transform: none;
+    top: auto;
 }
 .card {
     background: #313131;
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.9);
     width: 400px; 
-    margin: 0px 20px 100px 0px;
+    margin: 100px 20px 100px 0px;
     z-index: 4;
 }
 #character-list{
@@ -298,6 +309,8 @@ span{
         transform: translateX(260px);
     }
     .expand{
+        position: absolute;
+        left: -39px;
         width: 35px;
         height: 70px;
         border: solid #5d747b 2.5px;
@@ -307,7 +320,11 @@ span{
         border-bottom-right-radius: 0;
     }
     #exp1{
-        translate: -49.5px;
-        transform: translateY(-30px);
+        top: 30px;
+        margin: 0;
+    }
+    #exp2{
+        top: 130px;
+        margin: 0;
     }
 }

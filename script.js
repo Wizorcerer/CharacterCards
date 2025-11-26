@@ -164,44 +164,53 @@ characters.forEach(char => {
 });
 
 //tools
-
-const exp1 = document.getElementById('exp1');
-const t1 = document.getElementById('t1');
-let tog1 = false;
+const tools = [
+    {nm: 'tool1', id: 't1', btn: 'exp1', open: false}, 
+    {nm: 'tool2', id: 't2', btn: 'exp2', open: false}
+]
+const tool = document.querySelectorAll('.tool');
+let tog = false;
+let mobile = false;
 
 resize();
-
-exp1.addEventListener('click', menuFold)
 window.addEventListener('resize', resize)
 
 function resize () {
     if (window.innerWidth < 700) {
         mobile = true;
-        t1.style.transform = 'translateY(-85px)';
-        tog1 = false;
+        tool.forEach(tool => {
+            tool.style.transform = 'translateX(0px) translateY(-85px)';
+        });
     } else {
         mobile = false;
-        t1.style.transform = 'translateX(260px)';
-        tog1 = false;
+        tool.forEach(tool => {
+            tool.style.transform = 'translateX(260px) translateY(0px)';
+        });
     }
-};
-
-function menuFold () {
-    if (mobile == false) {
-        if (tog1 == false) {
-            t1.style.transform = 'translateX(0px)';
-            tog1 = true;
-        } else {
-            t1.style.transform = 'translateX(260px)';
-            tog1 = false;
-        }
-    } else{
-        if (tog1 == false) {
-            t1.style.transform = 'translateY(0px)';
-            tog1 = true;
-        } else {
-            t1.style.transform = 'translateY(-85px)';
-            tog1 = false;
-        }
-    }
+    tog = false;
 }
+
+tools.forEach(tl => {
+    const id = document.getElementById(tl.id);
+    const button = document.getElementById(tl.btn);
+
+    button.addEventListener('click', () => {
+        if (mobile == false) {
+            if (tog == false) {
+                id.style.transform = 'translateX(0px)';
+                tog = true;
+            } else {
+                id.style.transform = 'translateX(260px)';
+                tog = false;
+            }
+        } else{
+            if (tog == false) {
+                id.style.transform = 'translateY(0px)';
+                tog = true;
+            } else {
+                id.style.transform = 'translateY(-85px)';
+                tog = false;
+            }
+        }
+    })
+})
