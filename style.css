@@ -38,6 +38,58 @@ body {
     bottom: -30px;
     margin-top: 50px;
 }
+#t1 p{
+    margin-left: 10px;
+    font-size: 1.1em;
+}
+#monsterMenu{
+    position: absolute;
+    width: 160px;
+    display: flex;
+}
+#dropbtn{
+    cursor: pointer;
+    width: 30px;
+    height: 35px;
+    border-radius: 5px;
+    margin: 3px;
+    background: #5d747b;
+}
+#dropcnt{
+    display: none;
+    background: #58605a;
+    z-index: 5;
+    margin-left: 10px;
+    border: solid 2px #ffffff;
+}
+#dropcnt.show{
+    display: block;
+}
+.foe{
+    display: inline;
+    margin: 0;
+}
+.foe input{
+    width: 75px;
+    margin: 0;
+    border: 2px solid #58605a;
+    color: #58605a;
+}
+.foe input::placeholder{
+    color: #58605a;
+}
+.foe button{
+    border: 1px solid #313131;
+}
+#btn{
+    margin: 0;
+}
+#add{
+    width: 45px;
+    height: 25px;
+    margin-top: 5px;
+    border: 1px solid #313131;
+}
 #exp1{
     margin-left: 10px;
     transform: none;

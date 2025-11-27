@@ -229,3 +229,10 @@ tools.forEach(tl => {
         }
     })
 })
+
+const mainMenu = document.getElementById('dropcnt');
+const menubtn = document.getElementById('dropbtn');
+
+menubtn.addEventListener('click', () => {
+    mainMenu.classList.toggle('show');
+})
