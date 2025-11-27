@@ -90,6 +90,11 @@ body {
     margin-top: 5px;
     border: 1px solid #313131;
 }
+#add img{
+    width: 100%;
+    margin: 0;
+    transform: translateY(-7px);
+}
 #exp1{
     margin-left: 10px;
     transform: none;
