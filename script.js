@@ -232,7 +232,32 @@ tools.forEach(tl => {
 
 const mainMenu = document.getElementById('dropcnt');
 const menubtn = document.getElementById('dropbtn');
+const add = document.getElementById('add');
+const foes = document.getElementById('foes');
+let count = 2;
 
 menubtn.addEventListener('click', () => {
     mainMenu.classList.toggle('show');
+})
+
+const monst = [
+    
+]
+
+function addObject(obj) {
+    monst.push(obj);
+}
+
+add.addEventListener('click', () => {
+    let html = `<div class="foe" id=${[count]}>
+                    <input placeholder="Enemy ${count}">
+                    <button class="buttons" id="btn"></button>
+                </div>`
+    foes.innerHTML += html;
+    addObject({fid: count})
+    count += 1;
+})
+
+monst.forEach (monster => {
+    
 })
