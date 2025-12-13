@@ -64,7 +64,7 @@ characters.forEach(character => {
     let html = `
     <div class="pair">
     <div class="card">
-        <img class="image" src=${character.image}>
+        <img class="image" alt="Character Image" src=${character.image}>
         <h2 class="name">${character.name}</h2>
         <div class="info">
             <p><strong>Race: </strong><span id="race">${character.race}</span></p>
@@ -99,9 +99,9 @@ characters.forEach(character => {
     </div>
     <div class="secondary">
         <div id="top">
-            <img id="shield" src="images/Shield-removebg-preview.png">
-            <img id="wing" src="images/wings-removebg-preview.png">
-            <img id="heart" src="images/heart-removebg-preview.png">
+            <img alt="AC" id="shield" src="images/Shield-removebg-preview.png">
+            <img alt="Initiative" id="wing" src="images/wings-removebg-preview.png">
+            <img alt="Health" id="heart" src="images/heart-removebg-preview.png">
             <p id="armorClass" class="smstat"><strong>AC</strong><span id="ac">${character.ac}</span></p>
             <p id="initiative" class="smstat"><strong>Initiative</strong><span id="initiate">${character.initiative}</span></p>
             <p id="hp" class="smstat"><strong>Health</strong><span id="health-${character.healthid}">${character.health}</span></p>
