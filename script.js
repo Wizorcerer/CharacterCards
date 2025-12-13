@@ -83,7 +83,7 @@ characters.forEach(character => {
         <div class="btncontainer">
             <button id=${character.hpbtnid} class="buttons">Health</button>
             <button id=${character.fullid} class="buttons">Heal (Full)</button>
-            <select class="buttons" name="Spell slots" id="${character.slid}">
+            <select aria-label="Spell Menu" class="buttons" name="Spell slots" id="${character.slid}">
                 <option value="sp1" id=${character.sp1id}>Level 1 Spells (${character.sp1})</option>
                 <option value="sp2" id=${character.sp2id}>Level 2 Spells (${character.sp2})</option>
                 <option value="sp3" id=${character.sp3id}>Level 3 Spells (${character.sp3})</option>
